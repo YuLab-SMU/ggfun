@@ -1,0 +1,32 @@
+##' draw border for each of the ggplot legends
+##'
+##' 
+##' @title keybox
+##' @param p a ggplot object
+##' @param grob one of 'rect' or 'roundrect'
+##' @param gp graphic parameter
+##' @return grob object
+##' @export
+##' @author Guangchuang Yu
+keybox <- function(p, grob="roundrect", gp=NULL) {
+    g <- ggplot2::ggplotGrob(p)
+    i <- grep("guide-box", g$layout$name)
+    g2 <- g$grob[[i]]
+    for (j in seq_along(g2)) {
+        x <- g2[[1]][[j]]
+        if (inherits(x, 'zeroGrob')) next
+        if (grob == "rect") {
+            gr <- grid::rectGrob
+        } else if (grob == "roundrect") {
+            gr <- grid::roundrectGrob
+        } else {
+            stop("grob not supported...")
+        }
+
+        x[[1]][[1]] <- gr(gp = gp)
+        g2[[1]][[j]] <- x
+    }
+    g[[1]][[i]] <- g2
+    grid::grid.draw(g)
+    invisible(g)
+}

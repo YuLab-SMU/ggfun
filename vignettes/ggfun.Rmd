@@ -1,0 +1,48 @@
+---
+title: "Useful functions for ggplot2"
+author: "Guangchuang Yu\\
+
+        School of Basic Medical Sciences, Southern Medical University"
+date: "`r Sys.Date()`"
+output:
+  prettydoc::html_pretty:
+    toc: true
+    theme: cayman
+    highlight: github
+  pdf_document:
+    toc: true
+vignette: >
+  %\VignetteIndexEntry{ggplot utilities}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\usepackage[utf8]{inputenc}
+---
+
+```{r style, echo=FALSE, results="asis", message=FALSE}
+knitr::opts_chunk$set(tidy = FALSE,
+		   message = FALSE)
+
+library("grid")
+library("ggplot2")
+library("ggfun")
+theme_set(theme_grey())
+```
+
+
+```{r}
+library("grid")
+library("ggplot2")
+library("ggfun")
+```
+
+## keybox
+
+
+```{r}
+p <- ggplot(mtcars, aes(mpg, disp, color=cyl, size=cyl)) + geom_point()
+
+keybox(p, 'rect')
+```
+
+```{r}
+keybox(p, 'roundrect', gp = gpar(col = '#808080', lty = "dashed"))
+```
