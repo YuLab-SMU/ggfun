@@ -7,6 +7,10 @@
 ##' @param gp graphic parameter
 ##' @return grob object
 ##' @export
+##' @examples
+##' library(ggplot2)
+##' p <- ggplot(mtcars, aes(mpg, disp, color=factor(cyl), size=cyl)) + geom_point()
+##' keybox(p, 'roundrect', gp = gpar(col = '#808080', lty = "dashed"))
 ##' @author Guangchuang Yu
 keybox <- function(p, grob="roundrect", gp=NULL) {
     g <- ggplot2::ggplotGrob(p)

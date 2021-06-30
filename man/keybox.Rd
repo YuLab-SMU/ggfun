@@ -19,6 +19,11 @@ grob object
 \description{
 draw border for each of the ggplot legends
 }
+\examples{
+library(ggplot2)
+p <- ggplot(mtcars, aes(mpg, disp, color=factor(cyl), size=cyl)) + geom_point()
+keybox(p, 'roundrect', gp = gpar(col = '#808080', lty = "dashed"))
+}
 \author{
 Guangchuang Yu
 }
