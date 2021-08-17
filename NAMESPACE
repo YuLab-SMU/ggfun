@@ -3,7 +3,6 @@
 S3method(element_grob,element_roundrect)
 export(element_roundrect)
 export(get_aes_var)
-export(get_fun_from_pkg)
 export(gglegend)
 export(gpar)
 export(keybox)

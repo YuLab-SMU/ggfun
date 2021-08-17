@@ -34,18 +34,33 @@ library("ggplot2")
 library("ggfun")
 ```
 
-## keybox
+## element_roundrect
 
 
-```{r}
+<!--
 p <- ggplot(mtcars, aes(mpg, disp, color=factor(cyl), size=cyl)) + geom_point()
 
 keybox(p, 'rect')
+
+keybox(p, 'roundrect', gp = gpar(col = '#808080', lty = "dashed"))
+-->
+
+The `element_roundrect` works like `element_rect` to draw round rectangle background. We can use it to adjust theme elements, including legend, strip, panel and plot background.
+
+```{r}
+p <- ggplot(mpg, aes(displ, cty)) + geom_point()
+p <- p + facet_grid(cols = vars(cyl))
+p <- p + theme(strip.background=element_roundrect(fill="grey40", color=NA, r=0.15))
+p
 ```
 
 ```{r}
-keybox(p, 'roundrect', gp = gpar(col = '#808080', lty = "dashed"))
+p2 <- ggplot(mtcars, aes(mpg, disp, color=factor(cyl), size=cyl)) +
+         geom_point()
+p2 + theme(legend.background=element_roundrect(color="#808080", linetype=2))
 ```
+
+
 
 
 ## gglegend
