@@ -4,12 +4,16 @@
 \alias{add_facet}
 \title{add_facet}
 \usage{
-add_facet(plot, label)
+add_facet(plot, label, side = "t", angle = NULL)
 }
 \arguments{
 \item{plot}{a ggplot object}
 
 \item{label}{a string to label the plot}
+
+\item{side}{to label the plot at which side, either 't' (top) or 'r' (right)}
+
+\item{angle}{angle of the facet label. Default is 0 for side='t' and -90 for side='r'.}
 }
 \value{
 a ggplot with facet label
