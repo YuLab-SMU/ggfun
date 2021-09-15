@@ -13,6 +13,7 @@ Imports:
   utils
 Suggests:
   patchwork,
+  ggplotify,
   knitr,
   rmarkdown,
   prettydoc
