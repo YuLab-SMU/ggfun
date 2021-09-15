@@ -2,7 +2,6 @@
 
 S3method(element_grob,element_roundrect)
 S3method(ggplot_add,facet_manual)
-export(add_facet)
 export(element_roundrect)
 export(facet_manual)
 export(get_aes_var)
