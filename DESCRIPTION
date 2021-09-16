@@ -12,7 +12,6 @@ Imports:
   rlang,
   utils
 Suggests:
-  patchwork,
   ggplotify,
   knitr,
   rmarkdown,
