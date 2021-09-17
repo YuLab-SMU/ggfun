@@ -6,7 +6,7 @@
 # ggfun 0.0.4
 
 + mv `ggbreak2ggplot`, `is.ggbreak` and `is.ggtree` from the aplot package (2021-09-16, Thu)
-+ `facet_manual`: a better implementation of manually setting facet label, which combines `add_facet` and `ggtree::facet_labeller` (2021-09-15, Wed)
++ `facet_set`: a better implementation of manually setting facet label, which combines `add_facet`, `ggtree::facet_labeller`  and more (2021-09-15, Wed)
 + `add_facet` to add facet label to a ggplot object (2021-09-03, Fri)
 
 # ggfun 0.0.3

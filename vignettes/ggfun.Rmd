@@ -89,15 +89,23 @@ Manually specifying facet labels.
 ```{r fig.width=6, fig.height=3}
 library(ggplot2)
 library(ggfun)
-p <- ggplot(mtcars, aes(disp, drat)) + geom_point()
-p1 <- p + facet_wrap(~am)
-p1 + facet_set(label=c(`0`="Zero", `1`="One"))
+p <- ggplot(mtcars, aes(disp, drat)) + 
+  geom_point() + 
+  facet_grid(cols=vars(am), rows=vars(cyl))
+p + facet_set(label=c(`0`="Zero", `6`="Six"))
 ```
+
+Supports labeller:
+
+```{r}
+p + facet_set(label=label_both)
+```
+
 
 Add a facet label to a plot. 
 
 ```{r}
-p1 + facet_set(label="TEST")
+p + facet_set(label="TEST")
 ```
 
 With the [ggplotify](https://cran.r-project.org/package=ggplotify) package, we can use `facet_set` to add a facet label to almost any plot in R. 
