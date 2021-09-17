@@ -1,3 +1,5 @@
+## prototype of facet_manual
+
 ##' add a facet label to a ggplot
 ##'
 ##' add a facet label to a ggplot which only contains 1 panel
@@ -13,7 +15,7 @@
 ##' @importFrom ggplot2 element_text
 ##' @importFrom ggplot2 rel
 ##' @importFrom ggplot2 facet_grid
-##' @export
+##' @noRd
 ##' @author Guangchuang Yu
 add_facet <- function(plot, label, side = 't', angle = NULL) {
     side <- match.arg(side, c('t', 'r'))
