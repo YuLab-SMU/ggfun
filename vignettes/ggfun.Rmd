@@ -82,7 +82,7 @@ p <- ggplot(d, aes(x, y)) + geom_text(aes(label=lab), size=5)
 set_font(p, family="Times", fontface="italic", color='firebrick')
 ```
 
-## facet_manual
+## facet_set
 
 Manually specifying facet labels.
 
@@ -91,20 +91,20 @@ library(ggplot2)
 library(ggfun)
 p <- ggplot(mtcars, aes(disp, drat)) + geom_point()
 p1 <- p + facet_wrap(~am)
-p1 + facet_manual(label=c(`0`="Zero", `1`="One"))
+p1 + facet_set(label=c(`0`="Zero", `1`="One"))
 ```
 
 Add a facet label to a plot. 
 
 ```{r}
-p1 + facet_manual(label="TEST")
+p1 + facet_set(label="TEST")
 ```
 
-With the [ggplotify](https://cran.r-project.org/package=ggplotify) package, we can use `facet_manual` to add a facet label to almost any plot in R. 
+With the [ggplotify](https://cran.r-project.org/package=ggplotify) package, we can use `facet_set` to add a facet label to almost any plot in R. 
 
 ```{r eval=FALSE}
 ## please try:
 
 ggplotify::as.ggplot(~barplot(1:10, col=rainbow(10))) +
-  facet_manual('a barplot in base')
+  facet_set('a barplot in base')
 ```
