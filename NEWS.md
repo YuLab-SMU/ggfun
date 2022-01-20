@@ -3,6 +3,10 @@
 + mv facet utilities from `ggtree`
 + mv `theme_fp` from ggbreak
 
+# ggfun 0.0.5
+
++ mv `theme_transparent()` and `theme_nothing()` from the ggimage package (2022-01-20, Thu)
+
 # ggfun 0.0.4
 
 + mv `ggbreak2ggplot`, `is.ggbreak` and `is.ggtree` from the aplot package (2021-09-16, Thu)
