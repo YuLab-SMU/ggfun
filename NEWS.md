@@ -3,6 +3,11 @@
 + mv facet utilities from `ggtree`
 + mv `theme_fp` from ggbreak
 
+# ggfun 0.0.6
+
++ mv `identify.gg()` from 'ggtree' (2022-04-01, Fri)
++ mv `ggrange()`, `xrange()` and `yrange()` from 'aplot'
+
 # ggfun 0.0.5
 
 + mv `theme_transparent()` and `theme_nothing()` from the ggimage package (2022-01-20, Thu)
