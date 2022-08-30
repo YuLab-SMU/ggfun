@@ -17,7 +17,7 @@ element_roundrect(
 \arguments{
 \item{fill}{Fill colour.}
 
-\item{colour}{Line/border colour. Color is an alias for colour.}
+\item{colour, color}{Line/border colour. Color is an alias for colour.}
 
 \item{size}{Line/border size in mm; text size in pts.}
 
@@ -25,8 +25,6 @@ element_roundrect(
 dashed, dotted, dotdash, longdash, twodash), or a string with
 an even number (up to eight) of hexadecimal digits which give the
 lengths in consecutive positions in the string.}
-
-\item{color}{Line/border colour. Color is an alias for colour.}
 
 \item{r}{the radius of the rounded corners, a \code{unit} object,
 default is unit(0.1, 'snpc').}
