@@ -9,7 +9,9 @@ ggplot_add.facet_set <- function(object, plot, object_name){
     return(plot)
 }
 
-
+##' @importFrom ggplot2 element_text
+##' @importFrom ggplot2 margin
+##' @importFrom ggplot2 rel
 build_new_plot <- function(object, plot){
     flag.params <- TRUE
     if (!inherits(plot$facet, "FacetNull")){

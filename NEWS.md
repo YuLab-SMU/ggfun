@@ -3,6 +3,10 @@
 + mv facet utilities from `ggtree`
 + mv `theme_fp` from ggbreak
 
+# ggfun 0.0.7
+
++ add `theme_stamp` (2022-08-31, Wed, #6)
+
 # ggfun 0.0.6
 
 + mv `identify.gg()` from 'ggtree' (2022-04-01, Fri)
