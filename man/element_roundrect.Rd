@@ -19,7 +19,7 @@ element_roundrect(
 
 \item{colour, color}{Line/border colour. Color is an alias for colour.}
 
-\item{size}{Line/border size in mm; text size in pts.}
+\item{size}{text size in pts.}
 
 \item{linetype}{Line type. An integer (0:8), a name (blank, solid,
 dashed, dotted, dotdash, longdash, twodash), or a string with

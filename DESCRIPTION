@@ -10,7 +10,8 @@ Imports:
   ggplot2,
   grid,
   rlang,
-  utils
+  utils,
+  cli
 Suggests:
   ggplotify,
   knitr,
