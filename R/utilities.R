@@ -16,7 +16,7 @@ get_aes_var <- function(mapping, var) {
     tail(res, 1)
 }
 
-check_labeller <- utils::getFromNamespace("check_labeller", "ggplot2")
+#check_labeller <- utils::getFromNamespace("check_labeller", "ggplot2")
 
 extract_strip_label <- function(facet, plot, labeller=NULL){
     layout <- facet$compute_layout(list(plot$data),
