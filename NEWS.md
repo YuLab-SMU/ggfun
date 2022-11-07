@@ -3,6 +3,11 @@
 + mv facet utilities from `ggtree`
 + mv `theme_fp` from ggbreak
 
+
+# ggfun 0.0.8
+
++ compatible with ggplot2 v3.4.0 (2022-11-07, Mon)
+
 # ggfun 0.0.7
 
 + add `theme_stamp` (2022-08-31, Wed, #6)
