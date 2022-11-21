@@ -4,6 +4,10 @@
 + mv `theme_fp` from ggbreak
 
 
+# ggfun 0.0.9
+
++ `theme_noxaxis()` (2022-11-21, Mon)
+
 # ggfun 0.0.8
 
 + compatible with ggplot2 v3.4.0 (2022-11-07, Mon)
