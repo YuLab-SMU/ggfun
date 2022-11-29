@@ -3,8 +3,9 @@
 + mv facet utilities from `ggtree`
 + mv `theme_fp` from ggbreak
 
-# ggfun 0.0.9.001
+# ggfun 0.0.9.002
 
++ `volplot()` function to visualize volcano plot for DEGs (2022-11-29, Tue)
 + `geom_volpoint()` for volcano plot (2022-11-28, Mon)
 
 # ggfun 0.0.9

@@ -11,6 +11,8 @@ ggplot_add.facet_set <- function(object, plot, object_name){
 
 
 #' @method ggplot_add volpoint
+#' @importFrom rlang .data
+#' @importFrom ggplot2 geom_point
 #' @export
 ggplot_add.volpoint <- function(object, plot, object_name) {
   d <- plot$data
@@ -27,7 +29,7 @@ ggplot_add.volpoint <- function(object, plot, object_name) {
     if (grepl('\\(', yvar)) {
         e <- list2env(d)
         d$.y <- eval(parse(text = yvar), envir = e)
-        cutoff <- sub('(.*)\\((.*)\\)', paste0("\\1(", object$p_cutoff, ")") , yvar) 
+        cutoff <- sub('(.*)\\((.*)\\)', paste0("\\1(", p_cutoff, ")") , yvar) 
         cutoff <- eval(parse(text=cutoff))
         d$.type[d$.y > cutoff] <- yvar
         d$.type[abs(d[[xvar]]) > fc_cutoff & d$.y > cutoff] <- paste(xvar, 'and', yvar)
@@ -56,10 +58,7 @@ ggplot_add.volpoint <- function(object, plot, object_name) {
   object$log2FC_cutoff <- NULL
   object$p_cutoff <- NULL
   vol_layer <- do.call(geom_point, object)
-  plot + 
-    vol_layer + 
-    scale_color_manual(values=c("red2", "royalblue", "forestgreen", "grey30"), 
-                        name="") 
+  plot + vol_layer 
 }
 
 
