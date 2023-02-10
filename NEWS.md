@@ -3,8 +3,9 @@
 + mv facet utilities from `ggtree`
 + mv `theme_fp` from ggbreak
 
-# ggfun 0.0.9.002
+# ggfun 0.0.9.003
 
++ `geom_cake()`, `geom_triangle()` and `geom_segment_c()` functions from 'GuangchuangYu/gglayer' (2023-02-10, Fri)
 + `volplot()` function to visualize volcano plot for DEGs (2022-11-29, Tue)
 + `geom_volpoint()` for volcano plot (2022-11-28, Mon)
 
