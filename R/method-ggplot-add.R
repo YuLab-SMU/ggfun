@@ -9,6 +9,59 @@ ggplot_add.facet_set <- function(object, plot, object_name){
     return(plot)
 }
 
+
+#' @method ggplot_add volpoint
+#' @importFrom rlang .data
+#' @importFrom ggplot2 geom_point
+#' @export
+ggplot_add.volpoint <- function(object, plot, object_name) {
+  d <- plot$data
+  fc_cutoff <- object$log2FC_cutoff
+  p_cutoff <- object$p_cutoff
+
+  if (is.null(object$data)) {
+    d$.type = "NS"
+    xvar <- ggfun::get_aes_var(plot$mapping, 'x')
+    yvar <- ggfun::get_aes_var(plot$mapping, 'y')
+
+    d$.type[abs(d[[xvar]]) > fc_cutoff] <- xvar
+
+    if (grepl('\\(', yvar)) {
+        e <- list2env(d)
+        d$.y <- eval(parse(text = yvar), envir = e)
+        cutoff <- sub('(.*)\\((.*)\\)', paste0("\\1(", p_cutoff, ")") , yvar) 
+        cutoff <- eval(parse(text=cutoff))
+        d$.type[d$.y > cutoff] <- yvar
+        d$.type[abs(d[[xvar]]) > fc_cutoff & d$.y > cutoff] <- paste(xvar, 'and', yvar)
+    } else {
+        d$.y <- d[[yvar]]
+        d$.type[d$.y < p_cutoff] <- yvar
+        d$.type[abs(d[[xvar]]) > fc_cutoff & d$.y < p_cutoff] <- paste(xvar, 'and', yvar)
+    }
+
+    d$.type <- factor(d$.type, levels = c(paste(xvar, 'and', yvar), 
+                                            yvar, xvar, 'NS'))
+    
+    default_mapping <- aes(y = .data$.y, color = .data$.type) 
+    if (is.null(object$mapping)) {
+        mapping <- default_mapping
+    } else {
+        mapping <- object$mapping
+    }                                       
+  } else {
+    d <- object$data
+    mapping <- object$mapping
+  }
+
+  object$mapping <- mapping
+  object$data <- d
+  object$log2FC_cutoff <- NULL
+  object$p_cutoff <- NULL
+  vol_layer <- do.call(geom_point, object)
+  plot + vol_layer 
+}
+
+
 ##' @importFrom ggplot2 element_text
 ##' @importFrom ggplot2 margin
 ##' @importFrom ggplot2 rel

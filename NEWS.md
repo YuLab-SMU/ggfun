@@ -3,6 +3,20 @@
 + mv facet utilities from `ggtree`
 + mv `theme_fp` from ggbreak
 
+# ggfun 0.0.9.003
+
++ `geom_cake()`, `geom_triangle()` and `geom_segment_c()` functions from 'GuangchuangYu/gglayer' (2023-02-10, Fri)
++ `volplot()` function to visualize volcano plot for DEGs (2022-11-29, Tue)
++ `geom_volpoint()` for volcano plot (2022-11-28, Mon)
+
+# ggfun 0.0.9
+
++ `theme_noxaxis()` (2022-11-21, Mon)
+
+# ggfun 0.0.8
+
++ compatible with ggplot2 v3.4.0 (2022-11-07, Mon)
+
 # ggfun 0.0.7
 
 + add `theme_stamp` (2022-08-31, Wed, #6)
