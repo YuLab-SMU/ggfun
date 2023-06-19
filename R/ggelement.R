@@ -49,6 +49,50 @@ element_grob.element_roundrect <- function(element,
   grid::roundrectGrob(x, y, width, height, r = element$r, gp = modify_list(element_gp, gp), ...)
 }
 
+
+#' @inheritParams ggplot2::element_rect
+#' @export
+element_linerect <- function(colour = NULL, linewidth = NULL, 
+                             linetype = NULL, lineend = NULL, color = NULL, 
+                             inherit.blank = FALSE){
+
+  if (!is.null(color))  colour <- color
+  structure(
+    list(fill = fill, colour = colour, linewidth = linewidth, linetype = linetype,
+         inherit.blank = inherit.blank),
+    class = c("element_linerect", "element_line", "element")
+  )
+}
+
+#' @importFrom grid gpar polylineGrob
+#' @method element_grob element_linerect
+#' @export
+element_grob.element_linerect <- function(element, x = 0:1, y = 0:1,
+                                          fill = NULL, colour = NULL, 
+                                          linewidth = NULL, linetype = NULL, 
+                                          lineend = NULL,
+                                          default.units = "native",
+                                          id.lengths = NULL,
+                                          ...){
+  gp <- gpar(
+    col = colour, fill = colour,
+    lwd = len0_null(linewidth * .pt), lty = linetype, lineend = lineend
+  )
+  element_gp <- gpar(
+    col = element$colour, fill = element$colour,
+    lwd = len0_null(element$linewidth * .pt), lty = element$linetype,
+    lineend = element$lineend
+  )
+
+  polylineGrob(
+     x, y, default.units = default.units,
+     gp = modify_list(element_gp, gp),
+     id.lengths = id.lengths, ...
+  )
+
+}
+
+
 len0_null <- function (x){
     if (length(x) == 0)
         NULL
