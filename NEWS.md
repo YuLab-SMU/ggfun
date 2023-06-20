@@ -3,8 +3,9 @@
 + mv facet utilities from `ggtree`
 + mv `theme_fp` from ggbreak
 
-# ggfun 0.0.9.003
+# ggfun 0.1.0
 
++ remove `theme_stamp()` and implement a better version `theme_blinds()` which internally use `element_blinds()` to draw the strip background (2023-06-20, Tue, #9)
 + `geom_cake()`, `geom_triangle()` and `geom_segment_c()` functions from 'GuangchuangYu/gglayer' (2023-02-10, Fri)
 + `volplot()` function to visualize volcano plot for DEGs (2022-11-29, Tue)
 + `geom_volpoint()` for volcano plot (2022-11-28, Mon)
@@ -19,7 +20,7 @@
 
 # ggfun 0.0.7
 
-+ add `theme_stamp` (2022-08-31, Wed, #6)
++ add `theme_stamp` (2022-08-31, Wed, #6) (remove since v=0.1.0, use `theme_blinds` instead)
 
 # ggfun 0.0.6
 
