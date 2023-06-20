@@ -127,14 +127,14 @@ setup_data_continuous_color_df <- function(df, nsplit = 100, extend = 0.002, poo
                                            extend = extend)
 
         res <- lapply(df[i,, drop = FALSE], rep, each = nrow(df2)) |>
-            do.call('cbind', args = _) |> as.data.frame()
+            do.call('cbind', args = list()) |> as.data.frame()
         res$x <- df2$x
         res$xend <- df2$xend
         res$y <- df2$y
         res$yend <- df2$yend
         res$colour <- df2$col
         return(res)
-    }) |> do.call('rbind', args = _)
+    }) |> do.call('rbind', args = list())
 }
 
 
