@@ -3,6 +3,10 @@
 + mv facet utilities from `ggtree`
 + mv `theme_fp` from ggbreak
 
+# ggfun 0.1.0.001
+
++ be compatible with R 4.1 (2023-06-21, Wed, #10)
+
 # ggfun 0.1.0
 
 + remove `theme_stamp()` and implement a better version `theme_blinds()` which internally use `element_blinds()` to draw the strip background (2023-06-20, Tue, #9)
