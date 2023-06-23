@@ -1,10 +1,12 @@
 # TODO
 
 + mv facet utilities from `ggtree`
-+ mv `theme_fp` from ggbreak
 
-# ggfun 0.1.0.001
 
+# ggfun 0.1.1
+
++ mv `theme_no_margin()` from the 'aplot' package (2023-06-24, Sat)
++ mv `theme_fp()` from the 'ggbreak' package (2023-06-24, Sat)
 + be compatible with R 4.1 (2023-06-21, Wed, #10)
 
 # ggfun 0.1.0

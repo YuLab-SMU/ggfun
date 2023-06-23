@@ -1,3 +1,28 @@
+#' @importFrom ggplot2 theme_get
+get_theme_params = function(x, i) {
+    if (!inherits(x, "theme")) x <- x$theme
+    if (length(x) == 0) {
+        x <- ggplot2::theme_get()
+    }
+    x[i]
+}
+
+##' theme format painter
+##'
+##' It applies theme element (i) from a ggplot (x) to another ggplot object
+##' @title theme_fp
+##' @param x ggplot object to provide theme format
+##' @param i the element of a theme provided by `x`
+##' @return theme element
+##' @export
+##' @author Guangchuang Yu and Shuangbin Xu
+theme_fp <- function(x, i) {
+    params <- get_theme_params(x, i)
+    params <- c(params, list(complete = TRUE))
+    do.call(theme, params)
+}
+
+
 ##' transparent background theme
 ##'
 ##'
@@ -40,7 +65,8 @@ theme_nothing <- function(base_size = 11, base_family = "") {
 ##' @param color color of y-axis
 ##' @param ... additional parameters that passed to theme()
 ##' @return ggplot2 theme
-##' @importFrom ggplot2 element_blank element_line
+##' @importFrom ggplot2 element_blank
+##' @importFrom ggplot2 element_line
 ##' @export
 ##' @author Guangchuang Yu
 theme_noxaxis <- function(color = 'black', ...) {
@@ -52,6 +78,20 @@ theme_noxaxis <- function(color = 'black', ...) {
         axis.ticks.y = element_line(color = color),
         ...)
 }
+
+##' A theme that has no margin
+##'
+##'
+##' @title theme_no_margin
+##' @param ... additional parameters that passed to theme()
+##' @return ggplot2 theme
+##' @importFrom ggplot2 margin
+##' @export
+##' @author Guangchuang Yu
+theme_no_margin <- function(...) {
+    ggplot2::theme(plot.margin = ggplot2::margin(), ...)
+}
+
 
 ##' the theme of blind-like
 ##' @param colour the colour of rectangular, default is c('white', 'grey60'). 
