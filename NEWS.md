@@ -2,6 +2,9 @@
 
 + mv facet utilities from `ggtree`
 
+# ggfun 0.1.1.001
+
++ `get_legend()` function to extract legend of a plot (2023-07-10, Mon)
 
 # ggfun 0.1.1
 
