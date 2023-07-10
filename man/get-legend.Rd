@@ -7,7 +7,7 @@
 get_legend(plot)
 }
 \arguments{
-\item{plot}{a plot produce by grid, lattice, ggplot2 or composite plot}
+\item{plot}{a gg or gtable object}
 }
 \value{
 a 'gtable' object of the legend

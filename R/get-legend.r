@@ -3,7 +3,7 @@
 ##' 
 ##' @title get_legend
 ##' @rdname get-legend
-##' @param plot a plot produce by grid, lattice, ggplot2 or composite plot
+##' @param plot a gg or gtable object
 ##' @return a 'gtable' object of the legend
 ##' @importFrom ggplot2 ggplot_gtable
 ##' @importFrom ggplot2 ggplot_build
