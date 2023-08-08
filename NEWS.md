@@ -2,7 +2,7 @@
 
 + mv facet utilities from `ggtree`
 
-# ggfun 0.1.1.002
+# ggfun 0.1.2
 
 + add R version dependency in DESCRIPTION (2023-08-04, Fri)
 + `get_legend()` function to extract legend of a plot (2023-07-10, Mon)
