@@ -51,13 +51,13 @@ get_plot_data <- function(plot, var = NULL, layer = NULL) {
     var2 <- var
     i <- which(! var2 %in% names(d))
 
-    if (length(i) > 0) {
-        if (is.null(mapping) || length(mapping) == 0) {
-            cli::cli_alert("Not aes mapping found.")
-            cli::cli_alert("You nedd to set a proper 'layer' index to locate the layer mapping.")
+    if (length(i) > 0 && 
+        (is.null(mapping) || length(mapping) == 0)
+    ) {
+        cli::cli_alert("Not aes mapping found.")
+        cli::cli_alert("You nedd to set a proper 'layer' index to locate the layer mapping.")
 
-            return(NULL)
-        }
+        return(NULL)
     }
 
     var2[i] <- vapply(X = var2[i], 
