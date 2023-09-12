@@ -29,8 +29,17 @@ get_plot_data <- function(plot, var = NULL, layer = NULL) {
     }
 
     d <- ly$data
+    if (length(d) == 0) {
+        d <- plot$data
+    }
+
     m <- ly$mapping
-    m <- modifyList(plot$mapping, m)
+    
+    if (is.null(m)) {
+        mapping <- plot$mapping
+    } else {
+        mapping <- modifyList(plot$mapping, m)
+    }
 
     if (length(d) == 0) {
         cli::cli_alert("No data found.")
@@ -45,7 +54,7 @@ get_plot_data <- function(plot, var = NULL, layer = NULL) {
     var2[i] <- vapply(X = var2[i], 
         FUN = get_aes_var, 
         FUN.VALUE = character(1),
-        mapping = m)
+        mapping = mapping)
     
     d[, var2, drop = FALSE]
 }
