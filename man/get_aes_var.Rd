@@ -18,5 +18,5 @@ mapped var
 extract aes mapping, compatible with ggplot2 < 2.3.0 & > 2.3.0
 }
 \author{
-guangchuang yu
+Guangchuang Yu
 }
