@@ -2,8 +2,9 @@
 
 + mv facet utilities from `ggtree`
 
-# ggfun 0.1.2.001
+# ggfun 0.1.3
 
++ `set_point_legend_shape()` to override point shape legend (2023-09-15, Fri)
 + `get_plot_data()` to extract data from a 'gg' plot (2023-09-12, Tue)
 
 # ggfun 0.1.2

@@ -1,3 +1,28 @@
+##' override point legend set by 'aes(shape = I(shape))'
+##'
+##'
+##' @title set_point_legend_shape
+##' @param plot a 'gg' plot object
+##' @return an updated plot
+##' @importFrom ggplot2 guides
+##' @importFrom ggplot2 guide_legend
+##' @export
+##' @author Guangchuang Yu
+set_point_legend_shape <- function(plot) {
+    pshape <- get_aes_var(plot$mapping, 'shape')
+    if (is.null(pshape) || pshape == "NULL") {
+        return(plot)
+    }
+
+    pshape <- eval(parse(text = pshape))
+
+    plot + guides(size = guide_legend(override.aes = list(shape = pshape)))          
+}
+
+## default point shape for enrichplot
+enrichplot_point_shape <- 21
+
+
 ##' extract data from a 'gg' plot
 ##'
 ##'

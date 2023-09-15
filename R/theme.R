@@ -62,6 +62,7 @@ theme_nothing <- function(base_size = 11, base_family = "") {
 ##'
 ##'
 ##' @title theme_noxaxis
+##' @rdname theme-no-axis
 ##' @param color color of y-axis
 ##' @param ... additional parameters that passed to theme()
 ##' @return ggplot2 theme
@@ -76,6 +77,19 @@ theme_noxaxis <- function(color = 'black', ...) {
         axis.line.y = element_line(color = color), 
         axis.text.y = element_text(color = color), 
         axis.ticks.y = element_line(color = color),
+        ...)
+}
+
+
+##' @rdname theme-no-axis
+##' @export
+theme_noyaxis <- function(color = 'black', ...) {
+    theme(axis.line.y = element_blank(), 
+        axis.text.y = element_blank(), 
+        axis.ticks.y = element_blank(), 
+        axis.line.x = element_line(color = color), 
+        axis.text.x = element_text(color = color), 
+        axis.ticks.x = element_line(color = color),
         ...)
 }
 

@@ -2,9 +2,12 @@
 % Please edit documentation in R/theme.R
 \name{theme_noxaxis}
 \alias{theme_noxaxis}
+\alias{theme_noyaxis}
 \title{theme_noxaxis}
 \usage{
 theme_noxaxis(color = "black", ...)
+
+theme_noyaxis(color = "black", ...)
 }
 \arguments{
 \item{color}{color of y-axis}
