@@ -3,11 +3,14 @@
 \name{theme_noxaxis}
 \alias{theme_noxaxis}
 \alias{theme_noyaxis}
+\alias{theme_noaxis}
 \title{theme_noxaxis}
 \usage{
 theme_noxaxis(color = "black", ...)
 
 theme_noyaxis(color = "black", ...)
+
+theme_noaxis(...)
 }
 \arguments{
 \item{color}{color of y-axis}

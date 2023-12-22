@@ -93,6 +93,20 @@ theme_noyaxis <- function(color = 'black', ...) {
         ...)
 }
 
+
+##' @rdname theme-no-axis
+##' @export
+theme_noaxis <- function(...) {
+    theme(axis.line.y = element_blank(), 
+        axis.text.y = element_blank(), 
+        axis.ticks.y = element_blank(), 
+        axis.line.x = element_blank(), 
+        axis.text.x = element_blank(), 
+        axis.ticks.x = element_blank(), 
+        ...)
+}
+
+
 ##' A theme that has no margin
 ##'
 ##'

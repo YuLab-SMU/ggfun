@@ -4,6 +4,10 @@
 
 # ggfun 0.1.3
 
++ `theme_noaxis()` to remove both x and y axes (2023-12-22, Fri)
+
+# ggfun 0.1.3
+
 + `set_point_legend_shape()` to override point shape legend (2023-09-15, Fri)
 + `get_plot_data()` to extract data from a 'gg' plot (2023-09-12, Tue)
 
