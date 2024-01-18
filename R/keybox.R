@@ -13,24 +13,26 @@
 ##' keybox(p, 'roundrect', gp = gpar(col = '#808080', lty = "dashed"))
 ##' @author Guangchuang Yu
 keybox <- function(p, grob="roundrect", gp=NULL) {
-    g <- ggplot2::ggplotGrob(p)
-    i <- grep("guide-box", g$layout$name)
-    g2 <- g$grob[[i]]
-    for (j in seq_along(g2)) {
-        x <- g2[[1]][[j]]
-        if (inherits(x, 'zeroGrob')) next
-        if (grob == "rect") {
-            gr <- grid::rectGrob
-        } else if (grob == "roundrect") {
-            gr <- grid::roundrectGrob
-        } else {
-            stop("grob not supported...")
-        }
+    warning("This function is deprecated, please refer to 'element_roundrect'.")
+    p + theme(legend.background = element_roundrect(colour = gp$col, linetype = gp$lty))
+    # g <- ggplot2::ggplotGrob(p)
+    # i <- grep("guide-box", g$layout$name)
+    # g2 <- g$grob[[i]]
+    # for (j in seq_along(g2)) {
+    #     x <- g2[[1]][[j]]
+    #     if (inherits(x, 'zeroGrob')) next
+    #     if (grob == "rect") {
+    #         gr <- grid::rectGrob
+    #     } else if (grob == "roundrect") {
+    #         gr <- grid::roundrectGrob
+    #     } else {
+    #         stop("grob not supported...")
+    #     }
 
-        x[[1]][[1]] <- gr(gp = gp)
-        g2[[1]][[j]] <- x
-    }
-    g[[1]][[i]] <- g2
-    grid::grid.draw(g)
-    invisible(g)
+    #     x[[1]][[1]] <- gr(gp = gp)
+    #     g2[[1]][[j]] <- x
+    # }
+    # g[[1]][[i]] <- g2
+    # grid::grid.draw(g)
+    # invisible(g)
 }

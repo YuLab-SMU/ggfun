@@ -1,9 +1,14 @@
+<!-- 
 # TODO
 
 + mv facet utilities from `ggtree`
 
-# ggfun 0.1.3
+-->
 
+
+# ggfun 0.1.3.002
+
++ deprecate `keybox()` as it is not compatible with ggplot2 v3.5.0 and we have better solution by using `element_roundrect()` (2024-01-18, Thu)
 + `theme_noaxis()` to remove both x and y axes (2023-12-22, Fri)
 
 # ggfun 0.1.3
