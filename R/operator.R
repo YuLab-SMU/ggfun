@@ -19,7 +19,7 @@
                 "Cannot use {.code %<+%} with a single argument.",
                 "i" = "Did you accidentally put {.code %<+%} on a new line?"
         ))
-    }    
+    }
     UseMethod("%<+%")
 }
 
@@ -27,7 +27,7 @@
 #' @method %<+% ggtree
 #' @export
 "%<+%.ggtree" <- function(p, data){
-    p %add% data
+    p <- p %add% data
     return(p)
 }
 
@@ -63,7 +63,7 @@
         d2 <- dplyr::rename(d2, label = 1) ## rename first column name to 'label'
         dd <- dplyr::left_join(d1, d2, by="label")
     }
-    dd <- dd[match(d1$node, dd$node),]
+    dd <- dd[match(d1$node, dd$node),,drop=FALSE]
     return(dd)
 }
 
@@ -88,6 +88,10 @@ left_join.ggsc <- function(x, y, by = NULL, copy = FALSE, suffix=c("", ".y"), ..
     if (nchar(suffix[1])!=0 && nchar(suffix[2])==0){
         cli::cli_warn(msg)
         suffix <- rev(suffix[seq_len(2)])
+    }
+    if ('features' %in% names(dat) && length(unique(dat$features))>1 && !'features' %in% names(y)){
+        cli::cli_abort(c("The `features` contains in the column of {.cls {class(x)[1]}}, but ",
+                         "the {.cls {class(y)[1]}} does not have `features` column."), call = NULL)
     }
     da <- dplyr::left_join(dat, y, by = by, copy = copy, suffix = suffix, ...)
 
