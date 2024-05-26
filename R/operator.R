@@ -26,16 +26,16 @@
 
 #' @method %<+% ggtree
 #' @export
-`%<+%.ggtree` <- function(p, data){
+"%<+%.ggtree" <- function(p, data){
     p %add% data
     return(p)
 }
 
 #' @method %<+% ggsc
 #' @export
-`%<+%.ggsc` <- function(p, data){
-    if (inherits(x, 'patchwork')){
-        p$patches$plots <- lapply(x$patches$plots, function(x){
+"%<+%.ggsc" <- function(p, data){
+    if (inherits(p, 'patchwork')){
+        p$patches$plots <- lapply(p$patches$plots, function(x){
                                   p <- left_join(x, data)
                                   return(p)}) |>
                            suppressMessages()
