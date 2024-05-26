@@ -5,6 +5,9 @@
 
 -->
 
+# ggfun 0.1.4.990
+
++ add `%<+%` S3 method for `ggtree` and `ggsc` object.
 
 # ggfun 0.1.4
 
