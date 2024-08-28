@@ -31,6 +31,16 @@
     return(p)
 }
 
+#' @method %<+% ggflow
+#' @export
+"%<+%.ggflow" <- function(p, data){
+    p$data <- merge_1st_with_label(p$data, data)
+    return(p)
+}
+
+
+
+
 #' @method %<+% ggsc
 #' @export
 "%<+%.ggsc" <- function(p, data){
@@ -58,12 +68,18 @@
         ii <- which(cn %in% c("node", cn[!cn %in% colnames(d1)]))
         d2 <- d2[, ii]
         dd <- dplyr::left_join(d1, d2, by="node")
-    }else{
-        d2[,1] <- as.character(unlist(d2[,1])) ## `unlist` to work with tbl_df
-        d2 <- dplyr::rename(d2, label = 1) ## rename first column name to 'label'
-        dd <- dplyr::left_join(d1, d2, by="label")
+    } else {
+        dd <- merge_1st_with_label(d1, d2)
     }
-    dd <- dd[match(d1$node, dd$node),,drop=FALSE]
+    dd <- dd[match(d1$node, dd$node), ,drop=FALSE]
+    return(dd)
+}
+
+
+merge_1st_with_label <- function(d1, d2) {
+    d2[,1] <- as.character(unlist(d2[,1])) ## `unlist` to work with tbl_df
+    d2 <- dplyr::rename(d2, label = 1) ## rename first column name to 'label'
+    dd <- dplyr::left_join(d1, d2, by="label")    
     return(dd)
 }
 

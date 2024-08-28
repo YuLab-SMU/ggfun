@@ -36,6 +36,23 @@ geom_scatter_rect <- function(
     )
 }
 
+
+#rect <- function(data, coords) {
+#    gp <- gpar()
+#    if (!is.null(data$fill)) {
+#        gp <- modifyList(gp, list(fill=adjustcolor(data$fill)))
+#    }
+#    rectGrob(
+#        coords$x,
+#        coords$y, 
+#        width = .5, 
+#        height = .5,
+#        gp = gp)
+#}
+#
+#ggplot(d, aes(x, y)) +  grid_panel(rect, aes(fill=x))
+
+
 ##' @importFrom ggplot2 ggplot_add
 ##' @method ggplot_add scatter_rect
 ##' @importFrom utils modifyList
