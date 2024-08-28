@@ -19,6 +19,8 @@ geom_scatter_rect <- function(
     height = NULL,
     ...) {
 
+    # mostly, it equivalent to geom_tile
+    
     params <- list(...)
 
     structure(
@@ -40,16 +42,20 @@ geom_scatter_rect <- function(
 ##' @importFrom ggplot2 aes
 ##' @export
 ggplot_add.scatter_rect <- function(object, plot, object_name) {
-    w <- object$width / 2
+    w <- object$width
     if (is.null(object$height)) {
         h <- w * object$asp
     } else {
         h <- object$height
     }
 
+    w <- w/2
+    h <- h/2
 
-    default_mapping <- aes(xmin = .data$x - w, xmax = .data$x + w,
-                        ymin = .data$y - h, ymax = .data$y + h)
+    x <- get_aes_var(plot$mapping, 'x')
+    y <- get_aes_var(plot$mapping, 'y')
+    default_mapping <- aes(xmin = .data[[x]] - w, xmax = .data[[x]] + w,
+                        ymin = .data[[y]] - h, ymax = .data[[y]] + h)
     
     if (!is.null(object$mapping)) {
         mapping <- modifyList(default_mapping, object$mapping)
