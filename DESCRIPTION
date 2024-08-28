@@ -1,6 +1,6 @@
 Package: ggfun
 Title: Miscellaneous Functions for 'ggplot2'
-Version: 0.1.5
+Version: 0.1.5.001
 Authors@R: c(
        person("Guangchuang", "Yu",     email = "guangchuangyu@gmail.com", role = c("aut", "cre", "cph"), comment = c(ORCID = "0000-0002-6485-8781")),
        person("Shuangbin", "Xu",       email = "xshuangbin@163.com",      role = "aut", comment = c(ORCID="0000-0003-3513-5362"))
@@ -29,4 +29,4 @@ Encoding: UTF-8
 URL: https://github.com/YuLab-SMU/ggfun
 BugReports: https://github.com/YuLab-SMU/ggfun/issues
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
