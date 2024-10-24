@@ -34,12 +34,14 @@
 #' @method %<+% ggflow
 #' @export
 "%<+%.ggflow" <- function(p, data){
-    p$data <- merge_1st_with_label(p$data, data)
-    return(p)
+    attach_merge_1st_with_label(p, data)
 }
 
-
-
+#' @method %<+% ggtangle
+#' @export
+"%<+%.ggtangle" <- function(p, data){
+    attach_merge_1st_with_label(p, data)
+}
 
 #' @method %<+% ggsc
 #' @export
@@ -75,6 +77,10 @@
     return(dd)
 }
 
+attach_merge_1st_with_label <- function(p, data) {
+    p$data <- merge_1st_with_label(p$data, data)
+    return(p)
+}
 
 merge_1st_with_label <- function(d1, d2) {
     d2[,1] <- as.character(unlist(d2[,1])) ## `unlist` to work with tbl_df

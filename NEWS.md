@@ -5,6 +5,11 @@
 
 -->
 
+# ggfun 0.1.7
+
++ `td_filter()`, `td_mutate()` and `td_unnest()` from the 'ggtree' package (2024-10-24, Thu)
++ `%<+%` method for 'ggtangle' object (2024-10-24, Thu)
+
 # ggfun 0.1.6
 
 + `%<+%` method for 'ggflow' object (2024-08-28, Wed)
