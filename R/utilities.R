@@ -106,8 +106,17 @@ get_plot_data <- function(plot, var = NULL, layer = NULL) {
 ##' @author Guangchuang Yu
 get_aes_var <- function(mapping, var) {
     res <- rlang::quo_text(mapping[[var]])
+
     ## to compatible with ggplot2 v=2.2.2
-    tail(res, 1)
+    res <- tail(res, 1) |>
+    ## to compatible with .data[[var]]
+        sub('^.data\\[\\[(.*)\\]\\]$', "\\1", x=_) |>
+        ## to compatible with .data$var
+        sub('^.data\\$(.*)$', "\\1", x=_) |>
+        ## to remove quote
+        gsub('\\"', "", x=_)
+
+    return(res)
 }
 
 #check_labeller <- utils::getFromNamespace("check_labeller", "ggplot2")

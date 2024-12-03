@@ -5,6 +5,10 @@
 
 -->
 
+# ggfun 0.1.8
+
++ `get_aes_var()` compatible with rlang syntax, `.data[[var]]` and `.data$var` (2024-12-03, Tue)
+
 # ggfun 0.1.7
 
 + `td_filter()`, `td_mutate()` and `td_unnest()` from the 'ggtree' package (2024-10-24, Thu)
