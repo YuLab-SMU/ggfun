@@ -34,6 +34,9 @@ theme_fp <- function(x, i) {
 ##' @export
 ##' @author Guangchuang Yu with contributions from Hugo Gruson
 theme_transparent <- function (...){
+
+    yulab.utils:::.crap(n=2L, fn = 'caller function')
+
     theme(panel.background = element_rect(fill = "transparent",
         colour = NA), plot.background = element_rect(fill = "transparent",
         colour = NA), legend.key = element_rect(fill = "transparent",
@@ -71,6 +74,9 @@ theme_nothing <- function(base_size = 11, base_family = "") {
 ##' @export
 ##' @author Guangchuang Yu
 theme_noxaxis <- function(color = 'black', ...) {
+
+    yulab.utils:::.crap(n=2L, fn = 'caller function')
+
     theme(axis.line.x = element_blank(), 
         axis.text.x = element_blank(), 
         axis.ticks.x = element_blank(), 

@@ -15,7 +15,7 @@ Imports:
   grid,
   rlang,
   utils,
-  yulab.utils (>= 0.1.6)
+  yulab.utils (>= 0.1.9)
 Suggests:
   ggplotify,
   knitr,
