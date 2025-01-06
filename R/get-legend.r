@@ -11,7 +11,7 @@
 ##' @author Guangchuang Yu
 get_legend <- function(plot) {
 
-    yulab.utils:::.crap(n=2L, fn = 'caller function')
+    yulab.utils:::.crap(n=2L, fn = 'oncoplot_main')
 
     if (inherits(plot, 'gg')) {
         gt <- ggplot_gtable(ggplot_build(plot))
