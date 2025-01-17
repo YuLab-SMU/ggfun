@@ -7,7 +7,7 @@ Authors@R: c(
        )
 Description: Useful functions and utilities for 'ggplot' object (e.g., geometric layers, themes, and utilities to edit the object).
 Depends:
-  R (>= 4.1.0)
+  R (>= 4.2.0)
 Imports:
   cli,
   dplyr,
