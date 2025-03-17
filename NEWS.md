@@ -1,9 +1,6 @@
-<!-- 
-# TODO
+# ggfun 0.1.8.001
 
-+ mv facet utilities from `ggtree`
-
--->
++ import `ggplot2::facet_grid()` (2025-03-17, Mon)
 
 # ggfun 0.1.8
 

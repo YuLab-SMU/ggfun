@@ -65,6 +65,7 @@ ggplot_add.volpoint <- function(object, plot, object_name) {
 ##' @importFrom ggplot2 element_text
 ##' @importFrom ggplot2 margin
 ##' @importFrom ggplot2 rel
+##' @importFrom ggplot2 facet_grid
 build_new_plot <- function(object, plot){
     flag.params <- TRUE
     if (!inherits(plot$facet, "FacetNull")){
