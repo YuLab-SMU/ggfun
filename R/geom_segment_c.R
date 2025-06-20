@@ -57,7 +57,7 @@ Stat <- getFromNamespace("Stat", "ggplot2")
 ##' @importFrom ggplot2 aes_string
 ##' @method ggplot_add segmentC
 ##' @export
-ggplot_add.segmentC <- function(object, plot, object_name) {
+ggplot_add.segmentC <- function(object, plot, object_name, ...) {
     if (object$inherit.aes) {
         mapping <- modifyList(plot$mapping, object$mapping)
     } else {
@@ -88,7 +88,7 @@ ggplot_add.segmentC <- function(object, plot, object_name) {
         check.aes = FALSE
     )
 
-    ggplot_add(ly, plot, object_name)
+    ggplot_add(ly, plot, object_name, ...)
 }
 
 ##' @importFrom ggplot2 Stat
