@@ -1,5 +1,6 @@
-# ggfun 0.1.8.001
+# ggfun 0.1.9
 
++ S3 method consistency with ggplot2 (v=4.0.0) (2025-06-21, Sat, #15, #16)
 + import `ggplot2::facet_grid()` (2025-03-17, Mon)
 
 # ggfun 0.1.8
