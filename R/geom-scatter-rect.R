@@ -58,7 +58,7 @@ geom_scatter_rect <- function(
 ##' @importFrom utils modifyList
 ##' @importFrom ggplot2 aes
 ##' @export
-ggplot_add.scatter_rect <- function(object, plot, object_name) {
+ggplot_add.scatter_rect <- function(object, plot, object_name, ...) {
     w <- object$width
     if (is.null(object$height)) {
         h <- w * object$asp
@@ -85,6 +85,6 @@ ggplot_add.scatter_rect <- function(object, plot, object_name) {
     params$data <- object$data
 
     ly <- do.call("geom_rect", params)
-    ggplot_add(ly, plot, object_name)
+    ggplot_add(ly, plot, object_name, ...)
 }
 

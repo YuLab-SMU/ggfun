@@ -1,6 +1,12 @@
 #' round rectangle borders and backgrounds
 #' @inheritParams ggplot2::element_rect
-#' @param r the radius of the rounded corners, a \code{unit} object, 
+#' @param linewidth Line/border size in mm
+#' @param linetype  Line type for lines and borders respectively. An
+#' integer (0:8), a name (blank, solid, dashed, dotted, dotdash, 
+#' longdash, twodash), or a string with an even number (up to eight) 
+#' of hexadecimal digits which give the lengths in consecutive positions
+#' in the string.
+#' @param r the radius of the rounded corners, a \code{unit} object,
 #' default is unit(0.1, 'snpc').
 #' @export
 #' @examples
@@ -12,14 +18,15 @@
 #' p2 <- ggplot(mtcars, aes(mpg, disp, color=factor(cyl), size=cyl)) + 
 #'       geom_point()
 #' p2 + theme(legend.background=element_roundrect(color="#808080", linetype=2))
-element_roundrect <- function(fill = NULL, colour = NULL, size = NULL,
+element_roundrect <- function(fill = NULL, colour = NULL, linewidth = NULL,
   linetype = NULL, color = NULL, r=grid::unit(0.1, "snpc"), inherit.blank = FALSE) {
   if (!is.null(color))  colour <- color
   if (!grid::is.unit(r)) r <- grid::unit(r, 'snpc')
+
   structure(
     list(fill = fill, 
          colour = colour, 
-         size = size, 
+         linewidth = linewidth, 
          linetype = linetype,
          r = r,
          inherit.blank = inherit.blank),
@@ -32,15 +39,15 @@ element_roundrect <- function(fill = NULL, colour = NULL, size = NULL,
 #' @export
 element_grob.element_roundrect <- function(element, 
   x = 0.5, y = 0.5, width = 1, height = 1,
-  fill = NULL, colour = NULL, size = NULL, linetype = NULL, 
+  fill = NULL, colour = NULL, linewidth = NULL, linetype = NULL, 
   ...) {
 
-  gp <- grid::gpar(lwd = len0_null(size * .pt), 
+  gp <- grid::gpar(lwd = len0_null(linewidth * .pt), 
                    col = colour, 
                    fill = fill, 
                    lty = linetype
         )
-  element_gp <- grid::gpar(lwd = len0_null(element$size * .pt), 
+  element_gp <- grid::gpar(lwd = len0_null(element$linewidth * .pt), 
                            col = element$colour,
                            fill = element$fill, 
                            lty = element$linetype

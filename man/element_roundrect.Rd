@@ -7,7 +7,7 @@
 element_roundrect(
   fill = NULL,
   colour = NULL,
-  size = NULL,
+  linewidth = NULL,
   linetype = NULL,
   color = NULL,
   r = grid::unit(0.1, "snpc"),
@@ -15,16 +15,19 @@ element_roundrect(
 )
 }
 \arguments{
-\item{fill}{Fill colour.}
+\item{fill}{Fill colour. \code{fill_alpha()} can be used to set the transparency
+of the fill.}
 
-\item{colour, color}{Line/border colour. Color is an alias for colour.}
+\item{colour, color}{Line/border colour. Color is an alias for colour.
+\code{alpha()} can be used to set the transparency of the colour.}
 
-\item{size}{text size in pts.}
+\item{linewidth}{Line/border size in mm}
 
-\item{linetype}{Line type. An integer (0:8), a name (blank, solid,
-dashed, dotted, dotdash, longdash, twodash), or a string with
-an even number (up to eight) of hexadecimal digits which give the
-lengths in consecutive positions in the string.}
+\item{linetype}{Line type for lines and borders respectively. An
+integer (0:8), a name (blank, solid, dashed, dotted, dotdash,
+longdash, twodash), or a string with an even number (up to eight)
+of hexadecimal digits which give the lengths in consecutive positions
+in the string.}
 
 \item{r}{the radius of the rounded corners, a \code{unit} object,
 default is unit(0.1, 'snpc').}
