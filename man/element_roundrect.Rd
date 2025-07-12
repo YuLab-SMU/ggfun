@@ -15,11 +15,9 @@ element_roundrect(
 )
 }
 \arguments{
-\item{fill}{Fill colour. \code{fill_alpha()} can be used to set the transparency
-of the fill.}
+\item{fill}{Fill colour.}
 
-\item{colour, color}{Line/border colour. Color is an alias for colour.
-\code{alpha()} can be used to set the transparency of the colour.}
+\item{colour, color}{Line/border colour. Color is an alias for colour.}
 
 \item{linewidth}{Line/border size in mm}
 

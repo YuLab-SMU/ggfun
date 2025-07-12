@@ -1,3 +1,7 @@
+# ggfun 0.2.0
+
++ implement `geom_xspline()` via `grid::xsplineGrob()` (2025-07-12, Sat)
+
 # ggfun 0.1.9
 
 + S3 method consistency with ggplot2 (v=4.0.0) (2025-06-21, Sat, #15, #16)
