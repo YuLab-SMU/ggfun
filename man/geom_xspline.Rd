@@ -151,9 +151,4 @@ ggplot(df2, aes(x, y, color = group, group = group)) +
   geom_xspline(linewidth = 1) +
   scale_color_manual(values = c("A" = "tomato", "B" = "steelblue"))
 }
-\references{
-Blanc, C. and Schlick, C. (1995), "X-splines : A Spline Model
-Designed for the End User", in \emph{Proceedings of SIGGRAPH 95},
-pp. 377-386. \url{http://dept-info.labri.fr/~schlick/DOC/sig1.html}
-}
 \keyword{datasets}

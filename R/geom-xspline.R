@@ -11,9 +11,6 @@
 #' @param rep_ends For open X-splines, a logical value indicating whether the
 #'        first and last control points should be replicated for drawing the
 #'        curve. Ignored for closed X-splines.
-#' @references Blanc, C. and Schlick, C. (1995), "X-splines : A Spline Model
-#'             Designed for the End User", in \emph{Proceedings of SIGGRAPH 95},
-#'             pp. 377-386. \url{http://dept-info.labri.fr/~schlick/DOC/sig1.html}
 #' @importFrom grid xsplineGrob gpar
 #' @importFrom scales alpha
 #' @importFrom ggplot2 layer
