@@ -1,3 +1,7 @@
+# ggfun 0.2.0.001
+
++ `geom_hist()` and `stat_hist()` to produce histogram as `hist()` (2027-07-16, Wed)
+
 # ggfun 0.2.0
 
 + implement `geom_xspline()` via `grid::xsplineGrob()` (2025-07-12, Sat)
