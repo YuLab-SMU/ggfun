@@ -1,5 +1,5 @@
 #' @importFrom graphics hist
-compute_group_hist <- function(data, scales, breaks) {
+compute_group_hist <- function(data, scales, breaks = "Sturges") {
     d <- hist(data$x, plot=FALSE, breaks=breaks)
     count = d$count
     data.frame(
