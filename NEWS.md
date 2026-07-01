@@ -1,6 +1,9 @@
 # ggfun 0.2.1
 
 + update get_aes_var to support the quote of complex expressions (2026-07-01, Wed)
++ fix `geom_segment_c()` for vertical and reversed segments and remove deprecated `aes_string()` usage (2026-07-01, Wed)
++ fix `element_blinds()` grob construction when `id.lengths` is not supplied (2026-07-01, Wed)
++ improve `%<+%` error message when annotation data is missing and add unit tests (2026-07-01, Wed)
 + `geom_hist()` and `stat_hist()` to produce histogram as `hist()` (2025-07-16, Wed)
 
 # ggfun 0.2.0

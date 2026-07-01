@@ -11,14 +11,14 @@
 #' @return ggplot object with annotation data added
 #' @export
 `%<+%` <- function(p, data){
-    if (! is.data.frame(data)) {
-        cli::cli_abort("right object should be a data.frame...")
-    }
     if (missing(data)){
         cli::cli_abort(c(
                 "Cannot use {.code %<+%} with a single argument.",
                 "i" = "Did you accidentally put {.code %<+%} on a new line?"
         ))
+    }
+    if (! is.data.frame(data)) {
+        cli::cli_abort("right object should be a data.frame...")
     }
     UseMethod("%<+%")
 }

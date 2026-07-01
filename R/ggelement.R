@@ -83,8 +83,9 @@ element_blinds <- function(colour = c('white', 'grey60'),
                            color = NULL, 
                            inherit.blank = FALSE){
   if (missing(axis)){
-    
+    stop("'axis' must be specified as 'x' or 'y'.", call. = FALSE)
   }
+  axis <- match.arg(axis, c("x", "y"))
   if (!is.null(color))  colour <- color
   structure(
     list(
@@ -115,7 +116,11 @@ element_grob.element_blinds <- function(element, x = 0:1, y = 0:1,
   x <- xy.coord$x
   y <- xy.coord$y
 
-  id.lengths <- rep(4, length(id.lengths))
+  if (is.null(id.lengths)) {
+    id.lengths <- rep(4, length(x) / 4)
+  } else {
+    id.lengths <- rep(4, length(id.lengths))
+  }
   
   polygonGrob(
      x, y, default.units = default.units,
