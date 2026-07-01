@@ -12,8 +12,8 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
-  \item{graphics}{\code{\link[graphics]{identify}}}
+  \item{graphics}{\code{\link[graphics:identify]{identify()}}}
 
-  \item{grid}{\code{\link[grid]{gpar}}}
+  \item{grid}{\code{\link[grid:gpar]{gpar()}}}
 }}
 

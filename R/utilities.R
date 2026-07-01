@@ -113,8 +113,8 @@ get_aes_var <- function(mapping, var) {
         sub('^.data\\[\\[(.*)\\]\\]$', "\\1", x=_) |>
         ## to compatible with .data$var
         sub('^.data\\$(.*)$', "\\1", x=_) |>
-        ## to remove quote
-        gsub('\\"', "", x=_)
+        ## to remove quote at the beginning and end
+        sub('^"(.*)"$', "\\1", x=_)
 
     return(res)
 }
