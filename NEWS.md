@@ -1,6 +1,7 @@
-# ggfun 0.2.0.001
+# ggfun 0.2.1
 
-+ `geom_hist()` and `stat_hist()` to produce histogram as `hist()` (2027-07-16, Wed)
++ update get_aes_var to support the quote of complex expressions (2026-07-01, Wed)
++ `geom_hist()` and `stat_hist()` to produce histogram as `hist()` (2025-07-16, Wed)
 
 # ggfun 0.2.0
 
