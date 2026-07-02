@@ -6,7 +6,7 @@
 \alias{ggfun-package}
 \title{ggfun: Miscellaneous Functions for 'ggplot2'}
 \description{
-Useful functions and utilities for 'ggplot' object (e.g., geometric layers, themes, and utilities to edit the object).
+Provides a collection of 'ggplot2' extensions and utilities for creating geometric layers, applying themes, working with legends, and modifying plot objects.
 }
 \seealso{
 Useful links:

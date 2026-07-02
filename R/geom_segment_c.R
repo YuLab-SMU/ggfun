@@ -11,6 +11,7 @@
 ##' @param inherit.aes logical
 ##' @param arrow specification for arrow heads, as created by arrow().
 ##' @param arrow.fill fill color to usse for the arrow head (if closed). `NULL` means use `colour` aesthetic.
+##' @param nsplit number of pieces used to split each segment for continuous colouring.
 ##' @param ... additional parameter
 ##' @importFrom ggplot2 layer
 ##' @export
@@ -34,7 +35,7 @@ geom_segment_c <- function(mapping = NULL, data = NULL,
                            position = 'identity', lineend = "butt",
                            na.rm = FALSE, show.legend = NA, inherit.aes = TRUE,
                            arrow = NULL, arrow.fill = NULL, 
-                           ...) {
+                           nsplit = 20, ...) {
 
     structure(list(
         data = data,
@@ -46,6 +47,7 @@ geom_segment_c <- function(mapping = NULL, data = NULL,
             arrow = arrow,
             lineend = lineend,
             na.rm = na.rm,
+            nsplit = nsplit,
             ...
         )
     ), class = "segmentC")
@@ -96,8 +98,8 @@ StatSegmentC <- ggproto("StatSegmentC", Stat,
                         compute_group = function(data, params) {
                             data
                         },
-                        compute_panel = function(self, data, scales, params, lineend, extend = 0.002) {
-                            setup_data_continuous_color_df(data, nsplit = 20, extend = extend)
+                        compute_panel = function(self, data, scales, params, lineend, nsplit = 20, extend = 0.002) {
+                            setup_data_continuous_color_df(data, nsplit = nsplit, extend = extend)
                         }
                         )
 
@@ -112,7 +114,7 @@ setup_data_continuous_color_df <- function(df, nsplit = 100, extend = 0.002, poo
             rr <- c(df$x, df$xend)        
     }
 
-    lapply(1:nrow(df), function(i) {
+    lapply(seq_len(nrow(df)), function(i) {
         if (!pool)
             rr <- c(df$x[i], df$xend[i])
         df2 <- setup_data_continuous_color(x = df$x[i],
@@ -125,8 +127,7 @@ setup_data_continuous_color_df <- function(df, nsplit = 100, extend = 0.002, poo
                                            nsplit = nsplit,
                                            extend = extend)
 
-        res <- lapply(df[i,, drop = FALSE], rep, each = nrow(df2)) |>
-            do.call(what = 'cbind') |> as.data.frame()
+        res <- df[rep(i, nrow(df2)), , drop = FALSE]
         res$x <- df2$x
         res$xend <- df2$xend
         res$y <- df2$y
@@ -148,14 +149,12 @@ setup_data_continuous_color <- function(x, xend, y, yend, col, col2,
     ydiff <- yend - y
     xdiff <- xend - x
 
+    nsplit <- max(1, as.integer(nsplit[1]))
+
     if (xdiff == 0 && ydiff == 0) {
         n <- 1
     } else {
-        span <- if (xdiff == 0) abs(ydiff) else abs(diff(xrange))
-        if (span == 0) {
-            span <- if (xdiff == 0) abs(ydiff) else abs(xdiff)
-        }
-        n <- max(1, floor(max(abs(xdiff), abs(ydiff)) * nsplit / span))
+        n <- nsplit
     }
 
     if (n > 1) {

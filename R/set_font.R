@@ -30,11 +30,12 @@ set_font <- function(p, family="sans", fontface=NULL, size=NULL, color=NULL) {
     par <- par[!sapply(par, is.null)]
     gp <- do.call(gpar, par)
     g <- ggplotGrob(p)
-    ng <- grid.ls(grid.force(g), print=FALSE)$name
+    g <- grid.force(g)
+    ng <- grid.ls(g, print=FALSE)$name
     txt <- ng[which(grepl("text", ng))]
 
     for (i in seq_along(txt)) {
-        g <- editGrob(grid.force(g), gPath(txt[i]),
+        g <- editGrob(g, gPath(txt[i]),
                       grep = TRUE, gp = gp)
     }
     grid.draw(g)

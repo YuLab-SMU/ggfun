@@ -14,6 +14,7 @@ geom_segment_c(
   inherit.aes = TRUE,
   arrow = NULL,
   arrow.fill = NULL,
+  nsplit = 20,
   ...
 )
 }
@@ -35,6 +36,8 @@ geom_segment_c(
 \item{arrow}{specification for arrow heads, as created by arrow().}
 
 \item{arrow.fill}{fill color to usse for the arrow head (if closed). \code{NULL} means use \code{colour} aesthetic.}
+
+\item{nsplit}{number of pieces used to split each segment for continuous colouring.}
 
 \item{...}{additional parameter}
 }

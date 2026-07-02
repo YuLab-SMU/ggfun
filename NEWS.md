@@ -1,5 +1,6 @@
 # ggfun 0.2.1
 
++ improve performance of `geom_segment_c()` and `set_font()`; `geom_segment_c()` now supports `nsplit` to control segment expansion (2026-07-02, Thu)
 + fix `geom_segment_c()` for vertical and reversed segments and remove deprecated `aes_string()` usage (2026-07-01, Wed)
 + fix `element_blinds()` grob construction when `id.lengths` is not supplied (2026-07-01, Wed)
 + improve `%<+%` error message when annotation data is missing and add unit tests (2026-07-01, Wed)

@@ -1,2 +1,6 @@
 .Rhistory
 CRAN-SUBMISSION
+vignettes/*_files
+vignettes/*.html
+Rplots.pdf
+tests/testthat/Rplots.pdf
