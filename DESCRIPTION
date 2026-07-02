@@ -26,12 +26,12 @@ Imports:
 Suggests:
   ggplotify,
   knitr,
-  rmarkdown,
-  prettydoc,
+  pkgload,
+  quarto,
   testthat,
   tidyr,
   ggnewscale
-VignetteBuilder: knitr
+VignetteBuilder: quarto
 ByteCompile: true
 License: Artistic-2.0
 Encoding: UTF-8
