@@ -290,8 +290,11 @@ legend_data <- data.frame(
 gglegend(aes(colour = label, label = label), legend_data, geom_text, p_base)
 ```
 
-`set_font()` edits text grobs after a plot has been converted to a gtable. It
-draws the result and returns the edited grob invisibly.
+`set_font()` writes the requested family, face, size and colour into the plot
+theme. Text layers such as `geom_text()` do not follow the theme, so the same
+values are also attached to those layers -- except for aesthetics already mapped
+with `aes()`, which are left alone so that their legend survives. It returns the
+modified plot, which can still be extended with `+`.
 
 ```{r}
 #| label: set-font
@@ -303,9 +306,13 @@ df_text <- data.frame(
 
 p_text <- ggplot(df_text, aes(x, y, label = label)) +
   geom_text(size = 5) +
-  labs(title = "Edited text grobs")
+  labs(title = "One call, every text element")
 
+# font family, face and colour
 set_font(p_text, family = "serif", fontface = "italic", color = "firebrick")
+
+# size in points, and the result is still a plot that takes `+`
+set_font(p_text, size = 8) + labs(caption = "set_font() returns a plot")
 ```
 
 ## Summary

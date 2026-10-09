@@ -35,6 +35,7 @@ element_roundrect <- function(fill = NULL, colour = NULL, linewidth = NULL,
 }
 
 #' @importFrom ggplot2 element_grob
+#' @importFrom ggplot2 .pt
 #' @method element_grob element_roundrect
 #' @export
 element_grob.element_roundrect <- function(element, 

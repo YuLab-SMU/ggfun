@@ -1,3 +1,28 @@
+# ggfun 0.2.2
+
++ add `geom_bezier()` and `GeomBezier` for drawing grouped cubic Bezier paths;
+  this provides the low-level edge layer used by `ggtangle` to reproduce
+  ggraph-compatible circular network arcs (2026-10-05, Mon)
++ remove `volplot()` and `geom_volpoint()`: volcano plotting now lives in the
+  `ivolcano` package (2026-10-06, Tue)
++ `set_font()` is now implemented on top of the `ggplot2` theme system instead of
+  editing text grobs: the requested values go into `theme(text=)`, and — because
+  layer text does not follow the plot theme — into the layer parameters of text
+  geoms such as `geom_text()` and `ggtree::geom_tiplab()`. Theme elements that
+  already carry their own values, which would otherwise block the inheritance
+  from `theme(text=)`, are updated as well, while aesthetics already mapped with
+  `aes()` are left alone so that their legend is not dropped. It returns the
+  modified plot rather than drawing a gtable as a side effect, so the result can
+  still be extended with `+`; elements sized with `rel()` keep their relative
+  size, `size` is in points like `element_text(size=)`, and the font family is
+  left untouched unless `family` is supplied. Note that rendered sizes differ
+  from previous versions, which multiplied `size` by `.pt`, and that
+  `set_font(p, color = "red")` no longer overwrites every serif label
+  (2026-10-06, Tue)
++ fix `%<+%` silently returning an empty data frame when the plot data has no
+  `node` column; the join result is now only reordered by `node` when that column
+  is actually present (2026-10-06, Tue)
+
 # ggfun 0.2.1
 
 + improve performance of `geom_segment_c()` and `set_font()`; `geom_segment_c()` now supports `nsplit` to control segment expansion (2026-07-02, Thu)

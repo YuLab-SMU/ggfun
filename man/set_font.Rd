@@ -4,27 +4,41 @@
 \alias{set_font}
 \title{set_font}
 \usage{
-set_font(p, family = "sans", fontface = NULL, size = NULL, color = NULL)
+set_font(p, family = NULL, fontface = NULL, size = NULL, color = NULL)
 }
 \arguments{
 \item{p}{ggplot object}
 
-\item{family}{font fammily}
+\item{family}{font family; \code{NULL} (the default) keeps the family
+already used by the plot unchanged}
 
-\item{fontface}{font face}
+\item{fontface}{font face, e.g. \code{"bold"}, \code{"italic"} or the
+\code{grid} numeric codes 1 to 4}
 
-\item{size}{font size}
+\item{size}{font size in points, the same unit used by
+\code{\link[ggplot2]{element_text}}}
 
 \item{color}{font color}
 }
 \value{
-TableGrob object
+A modified ggplot object, which can still be extended with \code{+}.
 }
 \description{
 setting font for ggplot (axis text, label, title, etc.)
 }
+\details{
+The requested values are written into the plot theme, so text elements that
+inherit from \code{theme(text=)} keep their relative sizing (\code{rel()}).
+Text drawn by a layer (\code{geom_text()}, \code{geom_label()},
+\code{ggtree::geom_tiplab()}, ...) does not follow the plot theme, so for
+those layers the values become layer parameters. An aesthetic that is
+already mapped with \code{aes()}, either in the layer or in the plot, is
+left alone: \code{ggplot2} would otherwise let the constant parameter
+replace the mapped values and drop the corresponding legend along with it.
+Apply it to a finished plot, because a theme added afterwards can overwrite
+these settings.
+}
 \examples{
-library(grid)
 library(ggplot2)
 d <- data.frame(x=rnorm(10), y=rnorm(10), lab=LETTERS[1:10])
 p <- ggplot(d, aes(x, y)) + geom_text(aes(label=lab), size=5)

@@ -9,20 +9,20 @@ S3method(element_grob,element_roundrect)
 S3method(ggplot_add,facet_set)
 S3method(ggplot_add,scatter_rect)
 S3method(ggplot_add,segmentC)
-S3method(ggplot_add,volpoint)
 S3method(identify,gg)
 S3method(left_join,ggsc)
 export("%<+%")
+export(GeomBezier)
 export(GeomXspline)
 export(element_blinds)
 export(element_roundrect)
 export(facet_set)
+export(geom_bezier)
 export(geom_cake)
 export(geom_hist)
 export(geom_scatter_rect)
 export(geom_segment_c)
 export(geom_triangle)
-export(geom_volpoint)
 export(geom_xspline)
 export(get_aes_var)
 export(get_legend)
@@ -50,70 +50,74 @@ export(theme_noxaxis)
 export(theme_noyaxis)
 export(theme_stamp)
 export(theme_transparent)
-export(volplot)
 export(xrange)
 export(yrange)
-importFrom(cli,cli_alert)
-importFrom(cli,cli_warn)
-importFrom(dplyr,left_join)
-importFrom(dplyr,rename)
-importFrom(ggplot2,"%+replace%")
-importFrom(ggplot2,.pt)
-importFrom(ggplot2,Geom)
-importFrom(ggplot2,Stat)
-importFrom(ggplot2,aes)
-importFrom(ggplot2,aes_)
-importFrom(ggplot2,draw_key_blank)
-importFrom(ggplot2,draw_key_path)
-importFrom(ggplot2,element_blank)
-importFrom(ggplot2,element_grob)
-importFrom(ggplot2,element_line)
-importFrom(ggplot2,element_rect)
-importFrom(ggplot2,element_text)
-importFrom(ggplot2,facet_grid)
-importFrom(ggplot2,geom_point)
-importFrom(ggplot2,geom_rect)
-importFrom(ggplot2,ggplot)
-importFrom(ggplot2,ggplotGrob)
-importFrom(ggplot2,ggplot_add)
-importFrom(ggplot2,ggplot_build)
-importFrom(ggplot2,ggplot_gtable)
-importFrom(ggplot2,ggproto)
-importFrom(ggplot2,guide_legend)
-importFrom(ggplot2,guides)
-importFrom(ggplot2,last_plot)
-importFrom(ggplot2,layer)
-importFrom(ggplot2,margin)
-importFrom(ggplot2,rel)
-importFrom(ggplot2,scale_color_manual)
-importFrom(ggplot2,theme)
-importFrom(ggplot2,theme_get)
-importFrom(ggplot2,theme_void)
-importFrom(ggplot2,xlab)
-importFrom(graphics,hist)
-importFrom(graphics,identify)
-importFrom(grid,convertX)
-importFrom(grid,convertY)
-importFrom(grid,dataViewport)
-importFrom(grid,editGrob)
-importFrom(grid,gList)
-importFrom(grid,gPath)
-importFrom(grid,gTree)
-importFrom(grid,gpar)
-importFrom(grid,grid.draw)
-importFrom(grid,grid.force)
-importFrom(grid,grid.locator)
-importFrom(grid,grid.ls)
-importFrom(grid,polygonGrob)
-importFrom(grid,pushViewport)
-importFrom(grid,rectGrob)
-importFrom(grid,segmentsGrob)
-importFrom(grid,unit)
-importFrom(grid,viewport)
-importFrom(grid,xsplineGrob)
-importFrom(rlang,.data)
-importFrom(rlang,quo_text)
+importFrom(cli,
+  cli_alert,
+  cli_warn
+)
+importFrom(dplyr,
+  left_join,
+  rename
+)
+importFrom(ggplot2,
+  "%+replace%",
+  .pt,
+  Geom,
+  Stat,
+  aes,
+  aes_,
+  draw_key_blank,
+  draw_key_path,
+  element_blank,
+  element_grob,
+  element_line,
+  element_rect,
+  element_text,
+  facet_grid,
+  geom_rect,
+  ggplot_add,
+  ggplot_build,
+  ggplot_gtable,
+  ggproto,
+  guide_legend,
+  guides,
+  last_plot,
+  layer,
+  margin,
+  rel,
+  theme,
+  theme_get,
+  theme_void
+)
+importFrom(graphics,
+  hist,
+  identify
+)
+importFrom(grid,
+  convertX,
+  convertY,
+  dataViewport,
+  gList,
+  gTree,
+  gpar,
+  grid.draw,
+  grid.locator,
+  polygonGrob,
+  pushViewport,
+  rectGrob,
+  segmentsGrob,
+  unit,
+  viewport,
+  xsplineGrob
+)
+importFrom(rlang,
+  .data,
+  quo_text
+)
 importFrom(scales,alpha)
-importFrom(utils,modifyList)
-importFrom(utils,tail)
+importFrom(utils,
+  modifyList,
+  tail
+)
 importFrom(yulab.utils,yulab_msg)

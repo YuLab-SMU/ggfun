@@ -22,8 +22,8 @@ remotes::install_github("YuLab-SMU/ggfun")
 
 ## Features
 
-- Additional geoms, including `geom_xspline()`, `geom_hist()`,
-  `geom_cake()`, `geom_triangle()`, `geom_segment_c()`, and `geom_volpoint()`.
+- Additional geoms, including `geom_xspline()`, `geom_hist()`, `geom_bezier()`,
+  `geom_cake()`, `geom_triangle()`, and `geom_segment_c()`.
 - Theme helpers such as `theme_noaxis()`, `theme_noxaxis()`,
   `theme_noyaxis()`, `theme_transparent()`, `theme_nothing()`, and
   `theme_blinds()`.

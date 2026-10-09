@@ -73,7 +73,9 @@
     } else {
         dd <- merge_1st_with_label(d1, d2)
     }
-    dd <- dd[match(d1$node, dd$node), ,drop=FALSE]
+    if ("node" %in% colnames(d1) && "node" %in% colnames(dd)) {
+        dd <- dd[match(d1$node, dd$node), ,drop=FALSE]
+    }
     return(dd)
 }
 
